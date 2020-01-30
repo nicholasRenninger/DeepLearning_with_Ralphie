@@ -8,7 +8,7 @@ Icon?
 docs/*
 
 # shouldn't add recorded lectures lol
-Lectures/Recorded*lecture
+Lectures/Recorded*lectures
 
 # jupyter notebooks
 MANIFEST
