@@ -7,6 +7,9 @@ Icon?
 .DS_Store
 docs/*
 
+# shouldn't add recorded lectures lol
+Lectures/Recorded*lectures
+
 # jupyter notebooks
 MANIFEST
 build
