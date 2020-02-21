@@ -1,0 +1,13 @@
+name: DL
+channels:
+  - defaults
+dependencies:
+  - python=3
+  - jupyter_contrib_nbextensions
+  - numpy
+  - scikit-learn
+  - pandas
+  - matplotlib
+  - seaborn
+prefix: /Users/nicholasrenninger/anaconda3/envs/DL
+
