@@ -10,5 +10,6 @@ dependencies:
   - python=3.7
   - jupyter_contrib_nbextensions
   - pandas
+  - bleach=3.1.1
 prefix: /Users/nicholasrenninger/anaconda3/envs/DL
 
