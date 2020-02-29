@@ -1,13 +1,14 @@
 name: DL
 channels:
+  - conda-forge
   - defaults
 dependencies:
-  - python=3
-  - jupyter_contrib_nbextensions
-  - numpy
-  - scikit-learn
-  - pandas
   - matplotlib
+  - scikit-learn
   - seaborn
+  - numpy
+  - python=3.7
+  - jupyter_contrib_nbextensions
+  - pandas
 prefix: /Users/nicholasrenninger/anaconda3/envs/DL
 
