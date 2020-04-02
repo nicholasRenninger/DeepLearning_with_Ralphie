@@ -1,0 +1,120 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+\usepackage{epigraph}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{marginnote}
+\usepackage{makecell}
+\begin{document}
+\pagenumbering{gobble}
+\newpage
+\begin{center}
+  \bfseries\large
+  Assignment 4, Written Part
+\end{center}
+
+\noindent
+
+\vspace{20mm}
+
+Please turn in the answers to this written part of assignment 4 by either 
+ \begin{itemize}
+     \item Typesetting your answers inline with LaTeX (.tex file provided).
+     \item Write out your answers with tablet / stylus, and submit the annotated pdf.
+     \item Print out the assignment, write answers by hand, and scan / photograph your work.  The image must be clearly legible, and all pages must be combined into one file.
+     \item For the written response questions, clearly justify all conclusions to receive full credit. A correct answer with no supporting work will receive no credit.
+ \end{itemize}
+
+\newpage
+
+1. Consider a linear model for classification in which we use a logistic activation, but instead of cross-entropy loss, we use squared error loss. Assume a 1-dimensional input $x$, a single weight $w$ and an outcome $y\in\{0,1\}$. We will ignore the intercept term.
+\begin{align*}
+a_i &= wx_i \\
+p_{i}&=\mbox{logistic}\left(a_i\right) \\
+l_{i}&=\left(y-p_{i}\right)^{2}
+\end{align*}
+Recall that $\mbox{logistic}\left(u\right)=\frac{1}{1+e^{-u}}$.
+Calculate the following:
+
+{
+\renewcommand{\theenumi}{\alph{enumi}}
+\begin{enumerate}
+\item  $\dfrac{dl_i}{dp_i}$ \\
+\item $\dfrac{dp_i}{da_i}$, as a function of $a_i$ \\
+\item $\dfrac{dp_i}{da_i}$, rewritten as a function of $p_i$ only \\
+\item $\dfrac{da_i}{dw}$ \\
+\item $\dfrac{dl}{dw}$ \\
+\item Assume that $y_i = 1$. What is $\lim_{p\rightarrow0}$ $\frac{dl}{dw}$? Is this good or bad for learning? Explain why.
+\end{enumerate}
+}
+
+\newpage
+2. Consider a linear model for classification based on the hinge loss, with a penalty for weight magnitude. This is the basic support vector machine (don't worry if you haven't studied it). Unlike question 1, we will now assume that $y_i\in\{-1, 1\}$. Again, assume a single input variable $x_i$, and ignore the intercept term.
+\begin{align*}
+a_i &= wx_i \\
+l_i &= \max (0, 1-y_i a_i) + w^2 \\
+\end{align*}
+
+Calculate the following: \\
+
+{
+\renewcommand{\theenumi}{\alph{enumi}}
+\begin{enumerate}
+%\item $\dfrac{dl}{da_i}$ [Note: This technically should be a subgradient.  Only worry about the two cases of $y_i %a_i < 1$ and $y_i a_i > 1$ . Don't worry about the non-differentiable point where $y_ia_i = 1$.]}
+\item \begin{tabular}{l l}$\dfrac{dl}{da_i}$ & \makecell[l]{[Note: This technically should be a subgradient.  Only worry about the two cases of \\ $y_i a_i < 1$ and $y_i a_i > 1$ . Don't worry about the non-differentiable point where $y_ia_i = 1$.]}\end{tabular}
+\item $\dfrac{dl}{dw}$ [Again, there are two cases.]
+\item Assume that $y = 1$.  What is update rule for $w$ for stochastic gradient descent?
+\item Contrast this rule with the update rule for the perceptron.
+\end{enumerate}
+}
+\newpage
+3. \begin{center}
+$y = x + \frac{1}{wx + b}$
+\end{center}
+Draw the computation graph for calculating $y$ from $x, w$ and $b$, Fill in the blanks for the reverse mode AD table at $x=0.3,w = 0.5,b=0.1$
+\begin{center}
+Part 1 - Computation Graph
+\end{center}
+\vspace{150pt}
+\begin{center}
+Forward Primal Trace
+\end{center}
+\begin{center}
+\begin{tabular}{ c l l }
+$v_{-2}$ & $= x$ & $= 0.3$  \\
+$v_{-1}$ & $= w$ & $= 0.5$  \\
+$v_{0}$ & $= b$ & $= 0.1$ \\
+\hline
+$v_1$ & $= v_{-2} v_{-1}$ & $= 0.15$ \\ 
+$v_2$ & $= v_1 + v_{0}$ & $= 0.25$ \\
+$v_3$ & $= \frac{1}{v_2}$ & $= 4$ \\ 
+$v_4$ & $= v_{-2} + v_3$ & $= 4.3$ \\ 
+\hline
+$y$ & $= v_4$ & $= 4.3$ \\
+\end{tabular}
+\end{center}
+\begin{center}
+
+Part 2 - Reverse Adjoint Trace
+\end{center}
+\begin{center}
+\begin{tabular}{ c l l }
+$\Bar{v_{-2}}$ & = \hspace{200pt} & $=$  \\
+$\Bar{v_{-1}}$ & = \hspace{200pt} & $=$  \\
+$\Bar{v_0}$ & = \hspace{200pt} & $= $  \\
+\hline
+$\Bar{v_1}$ & = \hspace{200pt} & $=$ \\
+$\Bar{v_2}$ & = \hspace{200pt}  & $=$ \\
+$\Bar{v_3}$ & = \hspace{200pt} & $=$ \\
+\hline
+$\Bar{v_4}$ & = \hspace{200pt} & $=1$
+\end{tabular}
+\end{center}
+
+%\newpage
+%4. Suppose you are training a binary classifier using a 1-hidden layer neural network, with 50 neurons in the hidden layer, to classify images of size 28 $\times$ 28 with 3 channels. How many parameters does your model have (including bias parameters)? Explain your calculation.
+\end{document}

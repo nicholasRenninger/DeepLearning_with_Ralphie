@@ -1,0 +1,5 @@
+Transformer model for language understanding
+https://www.tensorflow.org/tutorials/text/transformer
+
+Tensor2Tensor, or T2T for short, is a library of deep learning models and datasets designed to make deep learning more accessible and accelerate ML research.
+https://github.com/tensorflow/tensor2tensor
