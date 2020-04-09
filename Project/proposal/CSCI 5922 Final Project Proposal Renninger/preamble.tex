@@ -1,0 +1,100 @@
+% turn tikz drop shadows on
+% \documentclass[conf,shadows]{new-aiaa}
+
+% Turn off shadows while developing document, as otherwise SyncTeX doesn't work. Turn back on for final output
+\documentclass[conf]{new-aiaa}
+
+%\documentclass[journal]{new-aiaa} for journal papers
+
+%%%%%%
+% drawing automata lolol :'(
+\usepackage{pgf}
+\usepackage{tikz}
+
+\ifshadows
+    \usetikzlibrary{automata,positioning,shapes,arrows,shadows,shadows.blur}
+    \newcommand{\shadowString}{circular drop shadow}
+    \newcommand{\rectShadowString}{blur shadow}
+\else
+    \usetikzlibrary{automata,positioning,shapes,arrows}
+    \newcommand{\shadowString}{}
+    \newcommand{\rectShadowString}{}
+\fi
+%%%%%%
+
+\usepackage[utf8]{inputenc}
+\usepackage{subfiles}
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\usepackage{longtable,tabularx}
+\usepackage{placeins}
+\usepackage{gensymb}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{wrapfig}
+\usepackage{booktabs}
+\usepackage{algorithm, algorithmic}
+\setlength\LTleft{0pt}
+% \usepackage[shortlabels]{enumitem}
+
+% define multiple authors with same footnote
+\newcommand*\samethanks[1][\value{footnote}]{\footnotemark[#1]}
+
+% python logo lololo
+\providecommand{\python}{\textbf{\textsf{Python }}}
+
+% for \coloneqq (:=)
+\usepackage{mathtools}
+
+% new font
+\usepackage{palatino}
+
+% code printing
+\usepackage{minted}
+
+% for le theory
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\usepackage{tcolorbox}
+\usepackage[]{fancyvrb}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{tocloft}
+\usepackage{siunitx}
+\usepackage{xcolor,colortbl}
+
+% expand figures
+\usepackage{changepage}    
+\usepackage{adjustbox}
+
+% sideways shit
+\usepackage{pdflscape}
+\usepackage{rotating}
+
+%% Defs %%
+\newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\newcolumntype{a}{>{\columncolor{Gray}}c}
+\newcolumntype{b}{>{\columncolor{white}}c}
+
+% for le quotes
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\singlespace\vspace{-\topsep}\small}
+\AtEndEnvironment{quote}{\vspace{-\topsep}\endsinglespace}
+
+% for dope colored links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}

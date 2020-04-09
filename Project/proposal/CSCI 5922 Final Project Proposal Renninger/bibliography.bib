@@ -1,0 +1,185 @@
+@article{doi:10.1146/annurev-control-060117-105157,
+author = {Schwarting, Wilko and Alonso-Mora, Javier and Rus, Daniela},
+title = {Planning and Decision-Making for Autonomous Vehicles},
+journal = {Annual Review of Control, Robotics, and Autonomous Systems},
+volume = {1},
+number = {1},
+pages = {187-210},
+year = {2018},
+doi = {10.1146/annurev-control-060117-105157},
+
+URL = { 
+        https://doi.org/10.1146/annurev-control-060117-105157
+    
+},
+eprint = { 
+        https://doi.org/10.1146/annurev-control-060117-105157
+    
+}
+,
+    abstract = { In this review, we provide an overview of emerging trends and challenges in the field of intelligent and autonomous, or self-driving, vehicles. Recent advances in the field of perception, planning, and decision-making for autonomous vehicles have led to great improvements in functional capabilities, with several prototypes already driving on our roads and streets. Yet challenges remain regarding guaranteed performance and safety under all driving circumstances. For instance, planning methods that provide safe and system-compliant performance in complex, cluttered environments while modeling the uncertain interaction with other traffic participants are required. Furthermore, new paradigms, such as interactive planning and end-to-end learning, open up questions regarding safety and reliability that need to be addressed. In this survey, we emphasize recent approaches for integrated perception and planning and for behavior-aware planning, many of which rely on machine learning. This raises the question of verification and safety, which we also touch upon. Finally, we discuss the state of the art and remaining challenges for managing fleets of autonomous vehicles. }
+}
+
+@article{Koul2019,
+abstract = {Recurrent neural networks (RNNs) are an effective representation of control policies for a wide range of reinforcement and imitation learning problems. RNN policies, however, are particularly difficult to explain, understand, and analyze due to their use of continuous-valued memory vectors and observation features. In this paper, we introduce a new technique, Quantized Bottleneck Insertion, to learn finite representations of these vectors and features. The result is a quantized representation of the RNN that can be analyzed to improve our understanding of memory use and general behavior. We present results of this approach on synthetic environments and six Atari games. The resulting finite representations are surprisingly small in some cases, using as few as 3 discrete memory states and 10 observations for a perfect Pong policy. We also show that these finite policy representations lead to improved interpretability.},
+archivePrefix = {arXiv},
+arxivId = {1811.12530},
+author = {Koul, Anurag and Fern, Alan and Greydanus, Sam},
+eprint = {1811.12530},
+file = {:Users/nicholasrenninger/Google Drive/Grad School/specification learning/related work/mendeleyCache/2019/Koul, Fern, Greydanus/LEARNING FINITE STATE REPRESENTATIONS OF RECURRENT POLICY NETWORKS.pdf:pdf},
+journal = {7th International Conference on Learning Representations, ICLR 2019},
+pages = {1--15},
+title = {{Learning finite state representations of recurrent policy networks}},
+year = {2019}
+}
+@inproceedings{pmlr-v80-weiss18a,
+abstract = {We present a novel algorithm that uses exact learning and abstraction to extract a deterministic finite automaton describing the state dynamics of a given trained RNN. We do this using Angluin's $\backslash$lstar algorithm as a learner and the trained RNN as an oracle. Our technique efficiently extracts accurate automata from trained RNNs, even when the state vectors are large and require fine differentiation.},
+address = {Stockholmsm{\"{a}}ssan, Stockholm Sweden},
+author = {Weiss, Gail and Goldberg, Yoav and Yahav, Eran},
+booktitle = {Proceedings of the 35th International Conference on Machine Learning},
+editor = {Dy, Jennifer and Krause, Andreas},
+pages = {5247--5256},
+publisher = {PMLR},
+series = {Proceedings of Machine Learning Research},
+title = {{Extracting Automata from Recurrent Neural Networks Using Queries and Counterexamples}},
+url = {http://proceedings.mlr.press/v80/weiss18a.html},
+volume = {80},
+year = {2018}
+}
+@article{Giles2001,
+author = {Giles, C. Lee and Lawrence, Steve and Tsoi, Ah Chung},
+doi = {10.1023/A:1010884214864},
+file = {:Users/nicholasrenninger/Google Drive/Grad School/specification learning/related work/mendeleyCache/2001/Giles, Lawrence, Tsoi/Giles, Lawrence, Tsoi - 2001 - Noisy Time Series Prediction using Recurrent Neural Networks and Grammatical Inference.pdf:pdf},
+issn = {08856125},
+journal = {Machine Learning},
+number = {1/2},
+pages = {161--183},
+title = {{Noisy Time Series Prediction using Recurrent Neural Networks and Grammatical Inference}},
+url = {http://link.springer.com/10.1023/A:1010884214864},
+volume = {44},
+year = {2001}
+}
+
+@article{Carr2019,
+abstract = {We study strategy synthesis for partially observable Markov decision processes (POMDPs). The particular problem is to determine strategies that provably adhere to (probabilistic) temporal logic constraints. This problem is computationally intractable and theoretically hard. We propose a novel method that combines techniques from machine learning and formal verification. First, we train a recurrent neural network (RNN) to encode POMDP strategies. The RNN accounts for memory-based decisions without the need to expand the full belief space of a POMDP. Secondly, we restrict the RNN-based strategy to represent a finite-memory strategy and implement it on a specific POMDP. For the resulting finite Markov chain, efficient formal verification techniques provide provable guarantees against temporal logic specifications. If the specification is not satisfied, counterexamples supply diagnostic information. We use this information to improve the strategy by iteratively training the RNN. Numerical experiments show that the proposed method elevates the state of the art in POMDP solving by up to three orders of magnitude in terms of solving times and model sizes.},
+archivePrefix = {arXiv},
+arxivId = {1903.08428},
+author = {Carr, Steven and Jansen, Nils and Wimmer, Ralf and Serban, Alexandru and Becker, Bernd and Topcu, Ufuk},
+doi = {10.24963/ijcai.2019/768},
+eprint = {1903.08428},
+file = {:Users/nicholasrenninger/Google Drive/Grad School/specification learning/related work/mendeleyCache/2019/Carr et al/Counterexample-Guided Strategy Improvement for POMDPs Using Recurrent Neural Networks.pdf:pdf},
+isbn = {9780999241141},
+issn = {10450823},
+journal = {IJCAI International Joint Conference on Artificial Intelligence},
+pages = {5532--5539},
+title = {{Counterexample-guided strategy improvement for POMDPs using recurrent neural networks}},
+volume = {2019-Augus},
+year = {2019}
+}
+@techreport{Weiss2018,
+abstract = {We present a novel algorithm that uses exact learning and abstraction to extract a deterministic finite automaton describing the state dynamics of a given trained RNN. We do this using Angluin's L * algorithm as a learner and the trained RNN as an oracle. Our technique efficiently extracts accurate automata from trained RNNs, even when the state vectors are large and require fine differentiation.},
+archivePrefix = {arXiv},
+arxivId = {1711.09576v3},
+author = {Weiss, Gail and Goldberg, Yoav and Yahav, Eran},
+eprint = {1711.09576v3},
+file = {:Users/nicholasrenninger/Google Drive/Grad School/specification learning/related work/mendeleyCache/2018/Weiss, Goldberg, Yahav/Weiss, Goldberg, Yahav - 2018 - Extracting Automata from Recurrent Neural Networks Using Queries and Counterexamples.pdf:pdf},
+title = {{Extracting Automata from Recurrent Neural Networks Using Queries and Counterexamples}},
+year = {2018}
+}
+@article{Michalenko2019RepresentingFL,
+author = {Michalenko, Joshua J and Shah, Ameesh and Verma, Abhinav and Baraniuk, Richard G and Chaudhuri, Swarat and Patel, Ankit B},
+file = {:Users/nicholasrenninger/Google Drive/Grad School/specification learning/related work/mendeleyCache/2019/Michalenko et al/representing formal languages- a comparison between finite automata and recurrent neural networks.pdf:pdf},
+journal = {ArXiv},
+title = {{Representing Formal Languages: A Comparison Between Finite Automata and Recurrent Neural Networks}},
+volume = {abs/1902.1},
+year = {2019}
+}
+@inproceedings{Le2018DeepSM,
+author = {Le, Tien-Duy B and Lo, David},
+booktitle = {ISSTA},
+file = {:Users/nicholasrenninger/Google Drive/Grad School/specification learning/related work/mendeleyCache/2018/Le, Lo/Le, Bao, Lo - 2018 - DSM a specification mining tool using recurrent neural network based language model(2).pdf:pdf},
+keywords = {dsm,np},
+mendeley-tags = {dsm,np},
+title = {{Deep specification mining}},
+year = {2018}
+}
+@article{Dong2016,
+abstract = {Neural network is becoming the dominant approach for solving many real-world problems like computer vision and natural language processing due to its exceptional performance as an end-to-end solution. However, deep learning models are complex and work in a black-box manner in general. .is hinders humans from understanding how such systems make decision or analyzing them using traditional sooware analysis techniques like testing and veri-cation. To solve this problem and bridge the gap, several recent approaches have proposed to extract simple models in the form of fnite-state automata or weighted automata for human understanding and reasoning. .e results are however not encouraging due to multiple reasons like low accuracy and scalability issue. In this work, we propose to extract models in the form of probabilis-tic automata from recurrent neural network models instead. Our work distinguishes itself from existing approaches in two important ways. One is that we extract probabilistic models to compensate the limited expressiveness of simple models (compared to that of deep neural networks). .is is inspired by the observation that human reasoning is ooen 'probabilistic'. .e other is that we identify the right level of abstraction based on hierarchical clustering so that the models are extracted in a task speciic way. We conducted experiments on several real-world datasets using state-of-the-art RNN architectures including GRU and LSTM. .e result shows that our approach improves existing model extraction approaches sig-niicantly and can produce simple models which accurately mimic the original models.},
+archivePrefix = {arXiv},
+arxivId = {1909.10023v1},
+author = {Dong, Guoliang and Wang, Jingyi and Sun, Jun and Zhang, Yang and Wang, Xinyu and Dai, Ting and Dong, Jin Song},
+doi = {10.1145},
+eprint = {1909.10023v1},
+file = {:Users/nicholasrenninger/Google Drive/Grad School/specification learning/related work/mendeleyCache/2016/Dong et al/Dong et al. - 2016 - Analyzing Recurrent Neural Network by Probabilistic Abstraction.pdf:pdf},
+journal = {ACM Reference format},
+title = {{Analyzing Recurrent Neural Network by Probabilistic Abstraction}},
+year = {2016}
+}
+@inproceedings{Ayache2018,
+abstract = {Understanding how a learned black box works is of crucial interest for the future of Machine Learning. In this paper, we pioneer the question of the global interpretability of learned black box models that assign numerical values to symbolic sequential data. To tackle that task, we propose a spectral algorithm for the extraction of weighted automata (WA) from such black boxes. This algorithm does not require the access to a dataset or to the inner representation of the black box: the inferred model can be obtained solely by querying the black box, feeding it with inputs and analyzing its outputs. Experiments using Recurrent Neural Networks (RNN) trained on a wide collection of 48 synthetic datasets and 2 real datasets show that the obtained approximation is of great quality.},
+archivePrefix = {arXiv},
+arxivId = {1810.05741v1},
+author = {Ayache, St{\'{e}}phane and Eyraud, R{\'{e}}mi and Goudian, No{\'{e}}},
+eprint = {1810.05741v1},
+file = {:Users/nicholasrenninger/Google Drive/Grad School/specification learning/related work/mendeleyCache/2018/Ayache, Eyraud, Goudian/Ayache, Eyraud, Goudian - 2018 - Explaining Black Boxes on Sequential Data using Weighted Automata.pdf:pdf},
+title = {{Explaining Black Boxes on Sequential Data using Weighted Automata}},
+year = {2018}
+}
+
+@article{Verwer_PAutomaC,
+ author = {Verwer, Sicco and Eyraud, R{\'e}mi and Higuera, Colin},
+ title = {PAutomaC: A Probabilistic Automata and Hidden Markov Models Learning Competition},
+ journal = {Mach. Learn.},
+ issue_date = {July      2014},
+ volume = {96},
+ number = {1-2},
+ month = jul,
+ year = {2014},
+ issn = {0885-6125},
+ pages = {129--154},
+ numpages = {26},
+ url = {https://doi.org/10.1007/s10994-013-5409-9},
+ doi = {10.1007/s10994-013-5409-9},
+ acmid = {2634303},
+ publisher = {Kluwer Academic Publishers},
+ address = {Norwell, MA, USA},
+ keywords = {Grammatical inference, Hidden Markov models, Probabilistic automata, Programming competition},
+}
+
+@inproceedings{Marzen2019,
+abstract = {Reservoir computers (RCs) and recurrent neural networks (RNNs) can mimic any finite-state automaton in theory, and some workers demonstrated that this can hold in practice. We test the capability of generalized linear models, RCs, and Long Short-Term Memory (LSTM) RNN architectures to predict the stochastic processes generated by a large suite of probabilistic deterministic finite-state automata (PDFA). PDFAs provide an excellent performance benchmark in that they can be systematically enumerated, the randomness and correlation structure of their generated processes are exactly known, and their optimal memory-limited predictors are easily computed. Unsurprisingly, LSTMs outperform RCs, which outperform generalized linear models. Surprisingly, each of these methods can fall short of the maximal predictive accuracy by as much as 50{\%} after training and, when optimized, tend to fall short of the maximal predictive accuracy by ∼ 5{\%}, even though previously available methods achieve maximal predictive accuracy with orders-of-magnitude less data. Thus, despite the representational universality of RCs and RNNs, using them can engender a surprising predictive gap for simple stimuli. One concludes that there is an important and underappreciated role for methods that infer "causal states" or "predictive state representations". Index Terms reservoir computers, recurrent neural networks, generalized linear models, causal states, predictive state representations SEM is with W. M.},
+archivePrefix = {arXiv},
+arxivId = {1910.07663v1},
+author = {Marzen, Sarah E and Crutchfield, James P},
+booktitle = {ArXiv},
+eprint = {1910.07663v1},
+file = {:Users/nicholasrenninger/Google Drive/Grad School/specification learning/related work/mendeleyCache/2019/Marzen, Crutchfield/Marzen, Crutchfield - 2019 - Probabilistic Deterministic Finite Automata and Recurrent Networks, Revisited.pdf:pdf},
+mendeley-groups = {comparisons/learningAutomataFromNN,comparisons/learningAutomataFromNN/Probabilistic Deterministic Finite Automata and Recurrent Networks Revisited},
+title = {{Probabilistic Deterministic Finite Automata and Recurrent Networks, Revisited}},
+year = {2019}
+}
+
+
+@inbook{prob_state_merging_book,
+  author = {de la Higuera, Colin},
+  pages = {333--339},
+  chapter = {16.3},
+  title={State Merging Algorithms},
+  crossref={DelaHiguera2013},
+}
+
+@book{DelaHiguera2013,
+abstract = {The problem of inducing, learning or inferring grammars has been studied$\backslash$nfor decades, but only in recent years has grammatical inference emerged$\backslash$nas an independent field with connections to many scientific disciplines,$\backslash$nincluding bio-informatics, computational linguistics and pattern$\backslash$nrecognition. This book meets the need for a comprehensive and unified$\backslash$nsummary of the basic techniques and results, suitable for researchers$\backslash$nworking in these various areas. In Part I, the objects of use for$\backslash$ngrammatical inference are studied in detail: strings and their topology,$\backslash$nautomata and grammars, whether probabilistic or not. Part II carefully$\backslash$nexplores the main questions in the field: What does learning mean?$\backslash$nHow can we associate complexity theory with learning? In Part III$\backslash$nthe author describes a number of techniques and algorithms that allow$\backslash$nus to learn from text, from an informant, or through interaction$\backslash$nwith the environment. These concern automata, grammars, rewriting$\backslash$nsystems, pattern languages or transducers.},
+author = {de la Higuera, Colin},
+booktitle = {Grammatical Inference: Learning Automata and Grammars},
+doi = {10.1017/CBO9781139194655},
+isbn = {9781139194655},
+keywords = {alr},
+mendeley-tags = {alr},
+number = {2004},
+pages = {1--417},
+title = {{Grammatical Inference: Learning Automata and Grammars}},
+publisher = {Cambridge University Press},
+address = {New York, NY, USA},
+year = {2013}
+}

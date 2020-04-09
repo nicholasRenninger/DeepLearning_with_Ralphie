@@ -1,0 +1,28 @@
+I have two approaches that I might explore for the final project:
+
+\begin{itemize}
+    \item Purely studying RNN language models and the ability of existing methods to extract a state machine from an RNN trained for my problem.
+    
+    \item Studying how RNN language models used as policy representations in a deep reinforcement learning setting fair as targets for state machine extraction.
+\end{itemize}
+
+In the case of pure RNN language model study, there are a large variety of methods that have had varying levels of success in extracting state machines from RNNs trained to be language models \cite{pmlr-v80-weiss18a} \cite{Giles2001} \cite{Weiss2018} \cite{Michalenko2019RepresentingFL} \cite{Le2018DeepSM} \cite{Dong2016} \cite{Ayache2018}. This process would consist of using the generative target models described in Sec. \ref{sec: Feasibility} to build the training corpus, and then experimenting with some of the more advanced RNN / transformer language models presented. Then, I would choose one of the more recent, salient methods to extract an appropriate PDFA from the citations listed (right now I'm leaning towards \cite{Le2018DeepSM}), and compare the extracted state machine language model's performance to that of the learned DNN language model.
+
+
+In the case in which we might learn and extract a state machine from a recurrent DNN (RNN) used as a policy representation using deep reinforcement learning, things would be pretty different. The idea here would be based off of current work to extract state machines from an RNN representing the policy in the case of either model-based POMDP policy iteration \cite{Carr2019} or model-free reinforcement learning \cite{Koul2019}.
+
+In this case, I would primarily be interested in implementing the work done by Koul \cite{Koul2019}, as this was the original work on extracting a moore-machine from an RNN encoding an RL agent's policy. This approach is really interesting:
+
+\begin{enumerate}
+    \item Use a baseline RL algorithm (e.g. DDPG, A3C, SAC, TRPO) to train a RNN-LSTM policy for an atari game given as an RL environment. This would involve designing a good LSTM architecture that trains well for the given environment.
+    
+    \item Next, we build the state machine \textit{into} the policy network by quantizing both the feature space of the LSTM input and the hidden state space of the LSTM into a small, finite number of discrete states. This is accomplished by training two encoder-decoder pairs -- one for the feature quantization and one for the hidden state quantization. These encoder / decoder pairs are trained by feeding features and traces from the replay buffer through these compression networks and minimizing the quantization / compression loss.
+    
+    \item Then, these encoder / decoder pairs are inserted back into the original policy network before and after the recurrent layers. As the quantization networks have already been trained, only fine tuning of this new policy network should be necessary with more RL episodic training.
+    
+    \item You can now extract a moore machine from this combined network by simply sampling properties from the encoder stage of each quantization network. From these quantized values, you can reconstruct a moore machine policy that has a small number of discrete observations and states, and that has encoder / decoder networks that allow this fully discrete controller to interface with a continuous observation / control RL environment (e.g. observing frames of an atari game and sending controls).
+\end{enumerate}
+
+This is quite a bit of implementation, but the paper is well written and it should be fairly straightforward to follow along. One thing that could decrease the difficulty of the project would be to use a simpler RL environment that does not require the training of a CNN for video feature extraction.
+
+% For my extension to inverse deep RL, we start by encoding a desired target specification as a probabilistic state machine. Then, we take the product of this specification for the underlying MDP of the RL environment and synthesize a correct policy for the MDP. We then generate a variety of traces using this policy on the MDP. We then use a deep inverse RL algorithm to learn a policy for the RL environment given these observed traces, learning the policy as some form of RNN. From this policy RNN, we apply a state machine extraction algorithm to get a compact, state machine representation of the learned policy. The model evaluation can be made by comparing the learned, extracted state machine representing the policy for the RL environment with that of the synthesized policy used to generate the traces used in the inverse RL process. From here, you can compare expected future rewards of the agent under the learned and target policies, the agent's adherence to the target specification, and the visual structure of the learned policy.
