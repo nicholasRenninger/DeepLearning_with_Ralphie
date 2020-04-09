@@ -31,11 +31,11 @@ Please turn in the answers to this written part of assignment 4 by either
 
 \newpage
 
-1. Consider a linear model for classification in which we use a logistic activation, but instead of cross-entropy loss, we use squared error loss. Assume a 1-dimensional input $x$, a single weight $w$ and an outcome $y\in\{0,1\}$. We will ignore the intercept term.
+1. Consider a linear model for classification in which we use a logistic activation, but instead of cross-entropy loss, we use squared error loss. Assume a 1-dimensional input $x$, a single weight $w$ and an outcome $y_i\in\{0,1\}$. We will ignore the intercept term.
 \begin{align*}
 a_i &= wx_i \\
 p_{i}&=\mbox{logistic}\left(a_i\right) \\
-l_{i}&=\left(y-p_{i}\right)^{2}
+l_{i}&=\left(y_i-p_{i}\right)^{2}
 \end{align*}
 Recall that $\mbox{logistic}\left(u\right)=\frac{1}{1+e^{-u}}$.
 Calculate the following:
@@ -47,8 +47,8 @@ Calculate the following:
 \item $\dfrac{dp_i}{da_i}$, as a function of $a_i$ \\
 \item $\dfrac{dp_i}{da_i}$, rewritten as a function of $p_i$ only \\
 \item $\dfrac{da_i}{dw}$ \\
-\item $\dfrac{dl}{dw}$ \\
-\item Assume that $y_i = 1$. What is $\lim_{p\rightarrow0}$ $\frac{dl}{dw}$? Is this good or bad for learning? Explain why.
+\item $\dfrac{dl_i}{dw}$ \\
+\item Assume that $y_i = 1$. What is $\lim_{p\rightarrow0}$ $\frac{dl_i}{dw}$? Is this good or bad for learning? Explain why.
 \end{enumerate}
 }
 
@@ -64,10 +64,9 @@ Calculate the following: \\
 {
 \renewcommand{\theenumi}{\alph{enumi}}
 \begin{enumerate}
-%\item $\dfrac{dl}{da_i}$ [Note: This technically should be a subgradient.  Only worry about the two cases of $y_i %a_i < 1$ and $y_i a_i > 1$ . Don't worry about the non-differentiable point where $y_ia_i = 1$.]}
-\item \begin{tabular}{l l}$\dfrac{dl}{da_i}$ & \makecell[l]{[Note: This technically should be a subgradient.  Only worry about the two cases of \\ $y_i a_i < 1$ and $y_i a_i > 1$ . Don't worry about the non-differentiable point where $y_ia_i = 1$.]}\end{tabular}
-\item $\dfrac{dl}{dw}$ [Again, there are two cases.]
-\item Assume that $y = 1$.  What is update rule for $w$ for stochastic gradient descent?
+\item \begin{tabular}{l l}$\dfrac{\partial l_i}{\partial a_i}$ & \makecell[l]{[Note: This technically should be a subgradient.  Only worry about the two cases of \\ $y_i a_i < 1$ and $y_i a_i > 1$ . Don't worry about the non-differentiable point where $y_ia_i = 1$.]}\end{tabular}
+\item $\dfrac{dl_i}{dw}$ [Again, there are two cases.]
+\item Assume that $y_i = 1$.  What is update rule for $w$ for stochastic gradient descent?
 \item Contrast this rule with the update rule for the perceptron.
 \end{enumerate}
 }
