@@ -9,7 +9,7 @@ docs/*
 
 # shouldn't add recorded lectures lol
 Lectures/Recorded*lectures
-"Lectures Notes/L21/nips_GAN_tutorial.webm"
+Lectures Notes/L21/nips_GAN_tutorial.webm
 
 # jupyter notebooks
 MANIFEST
